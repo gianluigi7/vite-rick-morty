@@ -12,11 +12,14 @@ ul {
 li {
     width: calc(100% / 4 - 10px);
     margin: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 p {
     font-size: 10px;
     text-align: center;
+    
  }
 
  h3 {
@@ -29,5 +32,10 @@ p {
  }
 
  img {
-    height: 200px;
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    display: block;
+    align-self: center;
+    
  }

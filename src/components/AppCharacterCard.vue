@@ -14,7 +14,7 @@ export default {
 <template>
     <ul>
         <li v-for="card in store.response">
-            <img href="{{{ card.image }}}" alt="img">
+            <img :src=" card.image " alt="img">
            <h3> {{ card.name }} </h3> 
            <p class="mt-10"> {{ card.status }} </p> 
            <p> {{ card.species }} </p> 
