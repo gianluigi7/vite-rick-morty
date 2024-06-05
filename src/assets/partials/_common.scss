@@ -39,3 +39,22 @@ p {
     align-self: center;
     
  }
+ select, input {
+    height: 28px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 0 8px;
+ }
+
+ input {
+    margin-right: 6px;
+    margin-bottom: 15px;
+ }
+
+ button:hover {
+   transform: scale(1.05);
+ }
+ button:active {
+   transform: scale(0.95);
+ }
+ 
