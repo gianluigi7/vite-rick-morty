@@ -19,20 +19,46 @@ export default {
       store,
     };
   },
-  created() {
-    axios.get(this.store.apiUrl).then(response => {
+  methods: {
+    character() {
+
+      const params = {};
+
+    if(this.store.searchKey) {
+      params.status = this.store.searchKey;
+      console.log(param.status);
+      
+      
+    }
+    
+
+    
+    axios.get(this.store.apiUrl + this.store.statusUrl, {
+      params,
+    })
+    .then(response => {
+      
       this.store.response = response.data.results;
       this.store.info = response.data.info;
-      console.log(response.data.info);
-      console.log(this.store.response[0]);
-    });
+    },
+  );
+    
+    
+   },
+   risposta() {
+    this.character();
+   },
+  
+  },
+  created() {
+    this.character();
   }
 }
 </script>
 <template>
  <AppTitle/>
  <div class="container">
-   <AppSearch/>
+   <AppSearch @filtro="risposta"/>
    <AppCharacterCard/>
 
  </div>

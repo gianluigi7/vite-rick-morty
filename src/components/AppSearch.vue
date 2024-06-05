@@ -4,14 +4,13 @@ import { store } from '../store';
 
 export default {
     name: 'AppSearch',
-    data() {
 
-    },
-    methods: {
-        searchStatus() {
-            console.log('funziona');
+    data() {
+        return {
+            store,
         }
-    }
+    },
+   
     
 }
 </script>
@@ -21,13 +20,13 @@ export default {
 
        <input placeholder="Search character" type="text">
       
-       <select @change="searchStatus"> <!--  v-model="store.searchKey" -->
+       <select @change="$emit('filtro')" v-model="store.searchKey"> <!--  v-model="store.searchKey" -->
         <option selected value="">Select status</option>
         <option value="alive">alive</option>
         <option value="dead">dead</option>
         <option value="unknown">unknown</option>
        </select>
-       <button>Search</button>
+       <button @click="$emit('search')">Search</button>
        <button>Reset</button>
     </div>
 </template>
