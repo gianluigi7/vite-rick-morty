@@ -21,7 +21,7 @@ export default {
 
        <input placeholder="Search character" type="text">
       
-       <select @change="searchStatus" v-model="store.searchKey">
+       <select @change="searchStatus"> <!--  v-model="store.searchKey" -->
         <option selected value="">Select status</option>
         <option value="alive">alive</option>
         <option value="dead">dead</option>
